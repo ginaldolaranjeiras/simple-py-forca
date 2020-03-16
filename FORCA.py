@@ -1,7 +1,7 @@
 from os import path
 import random
 
-def palavra_Obtida():
+def palavraObtida():
     arquivo = open('Lista_de_Palavras.txt', 'r')
     global palavra
     if arquivo.mode == 'r':
@@ -9,26 +9,30 @@ def palavra_Obtida():
         linhas_do_arquivo = arquivo.readlines()
         for linha in linhas_do_arquivo:
             palavra = linhas_do_arquivo[random.randrange(len(linhas_do_arquivo))]
+            palavra = palavra.upper()
 
     arquivo.close()
 
-palavra_Obtida()
 
+def palavraOculta():
+    palavraObtida()
+    obscure = "__ "
+    global obscureword
+    obscureword = []
+
+    for letra in range(len(palavra)-1):
+        obscureword.append(obscure)
+
+    return obscureword
+
+
+palavraOculta()
 vidas = 5
-
-palavra = palavra.upper()
-
-
-obscure = "__ "
-
-obscureword = []
-
-
-for j in range(len(palavra)-1):
-    obscureword.append(obscure)
 
 
 while vidas > 0:
+
+   
 
     for space in obscureword:
         print(space, end='')
