@@ -30,14 +30,12 @@ palavraOculta()
 vidas = 5
 
 
-while vidas > 0:
-
-   
-
+while vidas > 0: 
     for space in obscureword:
         print(space, end='')
 
     print('')
+    
     letra = input("Digite a letra: ")
     letra = letra.upper()
 
@@ -53,7 +51,6 @@ while vidas > 0:
 
     print('')
     letraspalavra = palavra.count(letra)
-
 
 
     if letraspalavra == 0:
