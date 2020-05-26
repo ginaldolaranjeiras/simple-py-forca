@@ -1,6 +1,8 @@
+import random
+
 vidas = 5
 
-arquivo = open('Lista_de_Palavras.txt', 'r')
+arquivo = open('Lista_de_Palavras.txt', 'r', encoding='utf-8')
 if arquivo.mode == 'r':
     linhas_do_arquivo = arquivo.readlines()
     for linha in linhas_do_arquivo:
